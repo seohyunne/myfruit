@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>상품 아이템 등록</title>
+</head>
+<body>
+    <h1>새 아이템</h1>
+    <form id=itemForm th:action="@{/items}"  method="post">
+        <label for="item_id">아이템(과일) : </label>
+        <input type="text" id="item_id"  name="item"  required>
+        <button type="summit">아이템 등록</button>
+    </form>
+</body>
+</html>
