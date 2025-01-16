@@ -1,6 +1,7 @@
 package com.myfruit.pms.dto;
 
 public class ItemDto {
+
     private Integer id;
     private String item;     // html 의 name 과 동일
 
