@@ -41,6 +41,13 @@ public class ItemController {
         return "shop/detail";
     }
 
+    @GetMapping
+    public String getItems(Model model){
+        List<ItemDto> items = itemService.getItems();
+        model.addAttribute("items",items);
+        return "/shop/list";
+    }
+
 
 
     
