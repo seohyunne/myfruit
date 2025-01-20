@@ -10,7 +10,7 @@
     <title>목록보기</title>
 </head>
 <body>
-<main layout:framgent="content">
+<main layout:fragment="content">
 <h1>상품목록</h1>
 <table>
     <tr>
@@ -20,7 +20,7 @@
 <!--    반복 구간 시작    -->
     <tr th:each="item : ${items}">
         <td th:text="${item.id}"></td>
-        <td th:text="${item.item}"></td>
+        <td><a th:href="@{/items/{id}(id=${item.id})}" th:text="${item.item}"></a></td>
     </tr>
     <tr>
         <td></td>
