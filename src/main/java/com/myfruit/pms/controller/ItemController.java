@@ -24,6 +24,7 @@ public class ItemController {
     }
 
     @PostMapping
+    @ResponseBody
     public void createItem(@RequestBody ItemDto itemDto){
         System.out.println(itemDto.getItem());
         itemService.createItem(itemDto);
@@ -45,7 +46,7 @@ public class ItemController {
     public String getItems(Model model){
         List<ItemDto> items = itemService.getItems();
         model.addAttribute("items",items);
-        return "/shop/list";
+        return "shop/list";
     }
 
     // 수정 - modify 나 edit 주로 사용
@@ -67,8 +68,6 @@ public class ItemController {
         System.out.println(itemDto.getItem());
         itemService.modifyItem(itemDto);
     }
-
-
 
 
 
