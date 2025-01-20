@@ -19,7 +19,7 @@
         update items set name=#{item} where id=#{id};
     </update>
 
-    <delete id="deleteItem" parameterType="com.myfruit.pms.dto.ItemDto">
+    <delete id="deleteItem">
         delete from items where id=#{id};
     </delete>
 </mapper>
