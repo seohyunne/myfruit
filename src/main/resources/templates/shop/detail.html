@@ -12,7 +12,10 @@
 <ul>
     <li>id: <span th:text="${item.id}"></span></li>
     <li>name: <span th:text="${item.item}"></span></li>
+    <li><a th:href="@{/items/{id}/modify(id=${item.id})}">수정하기</a></li>
+    <li></li>
 </ul>
+
 </main>
 </body>
 </html>

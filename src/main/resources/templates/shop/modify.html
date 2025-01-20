@@ -14,11 +14,14 @@
     <li>name: <span th:text="${item.item}"></span></li>
 </ul>
     <form id=itemForm>
-        <input type="hidden" id="item_id" name="id" value="${item.item}">
+        <input type="hidden" id="item_id" name="id" th:value="${item.id}">
         <label for="item_name">아이템(과일) : </label>
-        <input type="text" id="item_name"  name="item" value="${item.item}">
+        <input type="text" id="item_name"  name="item" th:value="${item.item}">
         <button type="summit">아이템 수정</button>
     </form>
 </main>
+<th:block layout:fragment="js">
+    <script th:src="@{/js/items-update.js}"></script>
+</th:block>
 </body>
 </html>

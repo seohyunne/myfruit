@@ -4,7 +4,7 @@ document.getElementById('itemForm').addEventListener("submit",function(e){
 
     const item = {
         id: document.getElementById("item_id").value,
-        item : document.getElementById("item_id").value
+        item : document.getElementById("item_name").value
     }
 
     // json 파일로 보내겠다
@@ -16,11 +16,12 @@ document.getElementById('itemForm').addEventListener("submit",function(e){
     })
         .then(response =>{
                 if(response.ok){
-                    alert("아이템이 성공적으로 생성되었습니다.");
+                    alert("아이템이 성공적으로 변경되었습니다.");
                     document.getElementById("itemForm").reset();
+                    window.location.href="/items";
                 }
                 else {
-                    alert("아이템 생성에 실패했습니다.");
+                    alert("아이템 변경에 실패했습니다.");
                 }
             })
         .catch( error =>{

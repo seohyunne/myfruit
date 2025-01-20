@@ -29,12 +29,13 @@ public class ItemService {
         return itemMapper.getItems();
     }
 
-    public void modyfiy(ItemDto itemDto){
+    public void modifyItem(ItemDto itemDto) {
         itemMapper.updateItem(itemDto);
     }
 
-    public void remove(int id){
+    public void removeItem(int id){
         itemMapper.deleteItem(id);
     }
+
 
 }
