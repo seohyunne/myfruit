@@ -48,20 +48,35 @@ public class ItemController {
         return "/shop/list";
     }
 
+    // 수정 - modify 나 edit 주로 사용
+    @GetMapping("/{id}/modify")
+    public String modify(@PathVariable("id") int id, Model model) {
+        try{
+            ItemDto itemDto = itemService.getItem(id);
+            model.addAttribute("item", itemDto);
+        }catch(IllegalStateException e){
+            model.addAttribute("message",e.getMessage());
+            return "common/error/404";
+        }
+        return "shop/modify";
+    }
+
+
 
 
     // 생성페이지 GET /items/create
     // 생성 POST /items
     // 상세보기 GET /items/{id}
+    // 수정 페이지 GET /items/{id}/modify
     // 수정 POST /items/{id}
-    // 삭제 GET /items/delete/{id}
+    // 삭제 GET /items/{id}/remove
     // 목록보기 GET /items
     
     // 생성페이지 GET /items/create
     // 생성 POST /items
     // 상세보기 GET /items/{id}
     // 수정 PUT /items/{id}
-    // 삭제 DELETE /items/delete/{id}
+    // 삭제 DELETE /items/{id}
     // 목록보기 GET /items
 
 
