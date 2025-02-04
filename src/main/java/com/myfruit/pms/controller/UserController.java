@@ -34,6 +34,11 @@ public class UserController {
         return "redirect:/auth/login";
     }
 
+    // SecurityConfig 의 loginPage 에서 처리하므로 필요 x
+    @GetMapping("/auth/login")
+    public String login() {
+        return "/user/login";
+    }
 
 
 }
