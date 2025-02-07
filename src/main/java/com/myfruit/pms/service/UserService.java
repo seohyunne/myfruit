@@ -27,6 +27,6 @@ public class UserService {
         // RoleDto roleDto = new RoleDto();
 
        userMapper.save(userDto);
-       userMapper.insertUserRole(userDto.getId(),1);
+//       userMapper.insertUserRole(userDto.getId(),1);
     }
 }

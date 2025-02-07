@@ -1,9 +1,7 @@
 package com.myfruit.pms.controller;
 
-import com.myfruit.pms.dto.UserDto;
 import com.myfruit.pms.service.UserService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequiredArgsConstructor
 public class UserController {
 
-
     private final UserService userService;
 
     @GetMapping("/auth/signup")
@@ -21,7 +18,7 @@ public class UserController {
         return "/user/signup";
     }
 
-    @PostMapping("/signup")
+    @PostMapping("/auth/signup")
     public String signup(@RequestParam("username") String username,
                          @RequestParam("password") String password) {
 
